@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Entity, type: :model do
- describe 'validates' do
+  describe 'validates' do
     subject { FactoryBot.build :entity }
 
     it 'should have a name' do

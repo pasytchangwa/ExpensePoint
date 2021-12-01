@@ -49,4 +49,3 @@ RSpec.describe '/categories', type: :request do
     end
   end
 end
-

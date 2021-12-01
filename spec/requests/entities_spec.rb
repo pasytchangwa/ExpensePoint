@@ -15,7 +15,8 @@ RSpec.describe '/entities', type: :request do
       it 'creates a new entity' do
         expect do
           post entities_url,
-              params: { entity: FactoryBot.attributes_for(:entity,                    category_ids: [FactoryBot.create(:category).id]) }
+               params: { entity: FactoryBot.attributes_for(:entity,
+                                                           category_ids: [FactoryBot.create(:category).id]) }
         end.to change(Entity, :count).by(1)
       end
     end
@@ -28,13 +29,11 @@ RSpec.describe '/entities', type: :request do
       end
     end
   end
-end
 
-  describe "GET /new" do
-    it "returns http success" do
-      get "/entities/new"
+  describe 'GET /new' do
+    it 'returns http success' do
+      get '/entities/new'
       expect(response).to have_http_status(:success)
     end
   end
 end
-

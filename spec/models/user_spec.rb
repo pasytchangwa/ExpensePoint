@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
 
   describe 'association' do
     context 'has-many categories' do
-      subject { FactoryBot.build(:user_with_categories, categories_count: 3) }
+      subject { FactoryBot.build(:user_categories, categories_count: 3) }
 
       it 'should have categories' do
         expect(subject.categories.length).to be 3
@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
     end
 
     context 'has-many entities' do
-      subject { FactoryBot.build(:user_with_entities, entities_count: 5) }
+      subject { FactoryBot.build(:user_entities, entities_count: 5) }
 
       it 'should have entities' do
         expect(subject.entities.length).to be 5

@@ -3,7 +3,7 @@ FactoryBot.define do
     name { Faker::Name.unique.name }
     email { Faker::Internet.email }
     password { 'mypassword' }
-  
+
     factory :user_categories do
       transient do
         categories_count { 10 }
