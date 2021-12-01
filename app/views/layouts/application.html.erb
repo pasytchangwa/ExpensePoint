@@ -12,5 +12,15 @@
 
   <body>
     <%= yield %>
+    <% if notice.present? %>
+  <div class="has-background-color-dark">
+  <p class="notice p-4 fw-regular"><%= notice %></p>
+  </div>
+<% end %>
+<% if alert.present? %>
+<div class="has-background-color-dark">
+  <p class="alert p-4 fw-regular"><%= alert %></p>
+</div>
+<% end %>
   </body>
 </html>
