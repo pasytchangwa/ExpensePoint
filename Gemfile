@@ -59,7 +59,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'webdrivers'
 end
-
+gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
 gem 'cancancan'
 gem 'devise'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

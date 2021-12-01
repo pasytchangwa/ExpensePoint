@@ -6,6 +6,13 @@ GIT
     faker (2.19.0)
       i18n (>= 1.8.11, < 2)
 
+GIT
+  remote: https://github.com/king601/devise-bootstrapped.git
+  revision: 59e23f0673c9a273be765ca26091c5792cd25fa7
+  branch: bootstrap4
+  specs:
+    devise-bootstrapped (0.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -287,6 +294,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   database_cleaner-active_record
   devise
+  devise-bootstrapped!
   factory_bot_rails
   faker!
   jbuilder (~> 2.7)
