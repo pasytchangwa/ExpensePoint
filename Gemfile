@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
+gem 'pry'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
@@ -32,7 +33,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 5.0.0'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner-active_record'
+  gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
+
 end
 
 group :development do
@@ -51,14 +56,13 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'database_cleaner'
+  
   gem 'shoulda-matchers'
   gem 'webdrivers'
 end
 
 gem 'cancancan'
 gem 'devise'
-gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped', branch: 'bootstrap4'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'rubocop'
+gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
