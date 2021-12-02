@@ -14,8 +14,8 @@ A mobile web application where you can manage your budget: you have a list of tr
 - PostgreSQL
 
 ## Live Link
-
-[Heroku](https://quiet-river-23201.herokuapp.com/)
+[video](https://www.loom.com/share/7f2e572ba7e749b28de48613db292b7c)
+[Demo](https://quiet-river-23201.herokuapp.com/)
 
 ## Getting Started
 
