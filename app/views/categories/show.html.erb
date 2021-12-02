@@ -1,0 +1,21 @@
+<section class="container">
+  <header class="header flex-row align-center mt-10">
+    <%= render "devise/shared/previous_btn" %>
+
+    <h2 class="mr-auto ml-auto">ENTITIES</h2>
+    
+    <div><%= button_to destroy_user_session_url, method: :get, class: 'button has-text-white' do %>
+      <span class="material-icons-outlined">logout</span>
+    <% end %></div>
+  </header>
+
+  <span class="total link text-bold">TOTAL: $<%= @category.amount %></span>
+
+  <ul class="flex-col gap-10 list-col entities-list-col">
+    <%= render 'entities/index', locals: { entities: @entities } %>
+  </ul>
+
+  <footer class="list-button">
+    <%= link_to 'ADD A NEW ENTITY', new_entity_path %>
+  </footer>
+</section>
