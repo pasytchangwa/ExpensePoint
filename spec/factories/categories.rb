@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :category do
     name { Faker::Company.name }
     icon { Faker::Company.logo }
-    user { nil }
+    user
 
     factory :category_entities do
       transient do

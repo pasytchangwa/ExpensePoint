@@ -22,6 +22,6 @@ RSpec.feature 'Login', type: :feature do
       fill_in 'Password', with: 'mpassword'
     end
     click_button 'Log In'
-    expect(page).to have_content 'LOGIN'
+    expect(page).to have_content 'Log in'
   end
 end

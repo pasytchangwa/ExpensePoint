@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :entity do
     name { Faker::Commerce.product_name }
     amount { Faker::Commerce.price }
-    user { nil }
+    user
 
     factory :entities_categories do
       transient do

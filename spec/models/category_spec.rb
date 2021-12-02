@@ -15,7 +15,7 @@ RSpec.describe Category, type: :model do
     end
 
     it 'should not have name longer than 100 characters' do
-      subject.name = 'A' * 101
+      subject.name = 'A' * 151
       expect(subject).to_not be_valid
     end
 
