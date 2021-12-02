@@ -1,6 +1,10 @@
 <section class="container">
   <header class="header flex-row align-center mt-10">
-    <%= render "devise/shared/previous_btn" %>
+    <%= link_to categories_url, class: 'has-text-white' do %>
+      <span class="material-icons-outlined">
+    arrow_back
+      </span>
+    <% end %>
 
     <h2 class="mr-auto ml-auto">ENTITIES</h2>
     

@@ -26,9 +26,9 @@ RSpec.feature 'Categories', type: :feature do
     expect(page).to have_current_path(category_path(category))
   end
 
-  scenario 'Clicking ADD NEW CATEGORY opens form' do
+  scenario 'Clicking ADD A NEW CATEGORY opens form' do
     visit root_path
-    click_link 'ADD NEW CATEGORY'
+    click_link 'ADD A NEW CATEGORY'
     expect(page).to have_current_path(new_category_path)
   end
 end

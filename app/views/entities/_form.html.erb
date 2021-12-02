@@ -16,7 +16,7 @@
     <%= form.number_field :amount, placeholder: "Amount", required: true, class: "w-full" %>
   </div>
   
-  <div class="field">
-    <%= form.collection_select :category_ids, current_user.categories.order(:name), :id, :name, {}, { multiple: true, class: "w-full"} %>
-  </div>
+  <div class='field'>
+  <%= form.label :category_ids, 'Select a category' %>
+  <%= form.collection_select :category_ids, current_user.categories.order(:name),:id , :name, {},  { multiple: true, class: "w-full"} %> </div> 
 <% end %>

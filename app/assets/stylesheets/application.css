@@ -14,7 +14,7 @@
  *= require_self
  */
 
- * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -72,6 +72,10 @@
 
 .mt-10 {
   margin-bottom: 10px;
+}
+
+.pt-10 {
+  padding-top: 10px;
 }
 
 .screen {

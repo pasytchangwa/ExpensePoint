@@ -36,4 +36,3 @@ class CategoriesController < ApplicationController
     params.fetch(:category, {}).permit(:name, :icon)
   end
 end
-

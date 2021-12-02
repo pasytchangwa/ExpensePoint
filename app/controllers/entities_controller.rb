@@ -17,7 +17,7 @@ class EntitiesController < ApplicationController
       if @entity.save
         format.html { redirect_to @entity.categories.first }
       else
-        format.html { render :new}
+        format.html { render :new }
       end
     end
   end
@@ -28,4 +28,3 @@ class EntitiesController < ApplicationController
     params.fetch(:entity, {}).permit(:name, :amount, category_ids: [])
   end
 end
-
