@@ -1,0 +1,23 @@
+<div class="flex-col">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
+    <div class="header flex-row align-center mt-10">
+      <%= render "devise/shared/previous_btn" %>
+      <div class="mr-auto ml-auto">
+        <h2>Log in</h2>
+      </div>
+      <div class="actions">
+        <%= form.submit "Log In" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "w-full" %>
+    </div>
+    
+    <div class="field">
+      <%= form.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "w-full" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
