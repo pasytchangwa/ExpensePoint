@@ -1,29 +1,30 @@
-<h2>Sign up</h2>
+<div class="flex-col">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
+    <div class="header flex-row align-center mt-10">
+      <%= render "devise/shared/previous_btn" %>
+      <div class="mr-auto ml-auto">
+        <h2>Register</h2>
+      </div>
+      <div class="actions">
+        <%= form.submit "Next" %>
+      </div>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= form.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Full Name", class: "w-full" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= form.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "w-full" %>
+    </div>
+    
+    <div class="field">
+      <%= form.password_field :password, autocomplete: "new-password", placeholder: "Password", class: "w-full" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <div class="field">
+    <%= form.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Password confirmation", class: "w-full" %>
+    </div>
+    <%= render "devise/shared/error_messages", resource: resource %>
+  <% end %>
+</div>
