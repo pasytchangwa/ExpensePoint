@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Entities', type: :feature do
+RSpec.feature 'Transactions', type: :feature do
   login_user
 
   background do
@@ -8,7 +8,7 @@ RSpec.feature 'Entities', type: :feature do
     FactoryBot.build_list(:entity, 3, user: @user, category_ids: [@category.id])
   end
 
-  scenario 'View list of entities' do
+  scenario 'View list of transactions' do
     visit category_path(@category)
     @category.entities.each do |entity|
       expect(page).to have_content entity.name
@@ -20,9 +20,9 @@ RSpec.feature 'Entities', type: :feature do
     expect(page).to have_content @category.amount
   end
 
-  scenario 'Clicking ADD A NEW ENTITY opens form' do
+  scenario 'Clicking ADD A NEW TRANSACTION opens form' do
     visit category_path(@category)
-    click_link 'ADD A NEW ENTITY'
+    click_link 'ADD A NEW TRANSACTION'
     expect(page).to have_current_path(new_entity_path)
   end
 end
