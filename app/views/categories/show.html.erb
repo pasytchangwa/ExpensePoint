@@ -6,7 +6,7 @@
       </span>
     <% end %>
 
-    <h2 class="mr-auto ml-auto">ENTITIES</h2>
+    <h2 class="mr-auto ml-auto">TRANSACTIONS</h2>
     
     <div><%= button_to destroy_user_session_url, method: :get, class: 'button has-text-white' do %>
       <span class="material-icons-outlined">logout</span>
@@ -20,6 +20,6 @@
   </ul>
 
   <footer class="list-button">
-    <%= link_to 'ADD A NEW ENTITY', new_entity_path %>
+    <%= link_to 'ADD A NEW TRANSACTION', new_entity_path %>
   </footer>
 </section>
