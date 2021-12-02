@@ -1,0 +1,7 @@
+<li class="flex-row data-row link justify-between">
+  <div class="flex-col gap-10 justify-between">
+    <span><%= entity.name %></span>
+    <span><%= entity.created_at.strftime("%d %b %Y") %></span>
+  </div>
+  <span class="text-bold">$<%= entity.amount %></span>
+</li>
