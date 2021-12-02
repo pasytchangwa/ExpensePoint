@@ -3,11 +3,11 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show]
 
   def index
-    @categories = current_user.categories.all
+    @categories = current_user.categories
   end
 
   def show
-    @entitiess = @category.entities.order(created_at: 'desc')
+    @entities = @category.entities.order(created_at: 'desc')
   end
 
   def new
@@ -17,19 +17,12 @@ class CategoriesController < ApplicationController
   def create
     @category = current_user.categories.new(category_params)
 
-    respond_to do |f|
+    respond_to do |format|
       if @category.save
-        f.html { redirect_to root_path, notice: 'A category has been created successfully' }
+        format.html { redirect_to root_path }
       else
-        f.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
       end
-    end
-  end
-
-  def destroy
-    @categoy.destroy
-    respond_to do |f|
-      f.html { redirect_to root_path, notice: 'A category has been deleted successfully!' }
     end
   end
 
@@ -40,7 +33,7 @@ class CategoriesController < ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name, :icon)
+    params.fetch(:category, {}).permit(:name, :icon)
   end
 end
 
