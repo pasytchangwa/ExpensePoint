@@ -13,9 +13,11 @@ class EntitiesController < ApplicationController
     @entity = Entity.new(entity_params)
     @entity.user = current_user
 
-    respond_to do |f|
-      if entity.save
-        f.html { redirect_to @entity.categories.first }
+    respond_to do |format|
+      if @entity.save
+        format.html { redirect_to @entity.categories.first }
+      else
+        format.html { render :new}
       end
     end
   end
@@ -23,7 +25,7 @@ class EntitiesController < ApplicationController
   private
 
   def entity_params
-    params.require(:entity).permit(:name :amount, category_ids: [])
+    params.fetch(:entity, {}).permit(:name, :amount, category_ids: [])
   end
 end
 
